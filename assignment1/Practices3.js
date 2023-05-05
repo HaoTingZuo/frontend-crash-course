@@ -1,4 +1,4 @@
-//Practice3-1
+//Practices3-1
 let day = "Sunday";
 switch (day) {
     case "Sunday":
@@ -24,7 +24,7 @@ switch (day) {
         break;
 }
 
-//Practice3-2
+//Practices3-2
 let seaon = "Fall";
 switch (seaon) {
     case "Spring":
