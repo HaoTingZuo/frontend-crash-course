@@ -1,0 +1,65 @@
+//Practices1-1
+const fruits = ["Apple", "Banana", "Mango", "Kiwi"];
+
+//Practices1-2
+const fruits = ["Apple", "Banana", "Mango", "Kiwi"];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+//Practice1-3
+const fruits = ["Apple", "Banana", "Mango", "Kiwi"]; {
+    fruits.splice(3, 1);
+    fruits.pop();
+    fruits.push("Durian");
+    console.log(fruits);
+}
+
+
+//Practice1-4
+fruits.push("strawberry");
+fruits.push("Sakyamuni");
+
+//Practice1-5
+fruits.splice(1, 1);
+
+//Practice1-6
+const fruits = ["Apple", "Banana", "Mango", "Kiwi"];
+let i = 0;
+
+while (i < fruits.length) {
+    console.log(fruits[i]);
+    i++;
+}
+
+//Practice1-7
+const array = [2, 3, 4, 5, 6];
+const mappedArray = array.map((element, index, originaLArray) => {
+    return element ** 2;
+});
+
+console.log(mappedArray);
+
+//Practice1-8
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+const filterednumbers = numbers.filter((number) => {
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return numbers !== 1;
+});
+
+console.log(filterednumbers);
+
+//Practice1-9
+const array = [1, 2, 3, 4, 5];
+
+const sum = array.reduce((accumulator, element, index, originalArray) => {
+    return accumulator + element;
+}, 0);
+
+console.log(sum);
