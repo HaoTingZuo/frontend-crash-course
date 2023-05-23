@@ -3,79 +3,75 @@
 <head>
     <title>Todo App</title>
     <style>
-        body {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 100px;
+       #block{
+  width:300px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+  button {
+  padding: 10px;
+  font-size: 18px;
         }
-        input[type="text"] {
-            position: fixed;
-            left: 30px;
-            padding: 10px;
-            font-size: 24px;
+
+#add{
+  min-width:80%;
+  dispaly:flex;
+  justify-content:space-between;
+  background-color:pink;
+}
+
+#todoList{
+  word-break: break-word;
+  width:80%;
+  
+  position:relative;
+  left:-16px;
+  
+  display:flex;
+  gap:10px;
+  flex-direction:column;
+}
+#todoList li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-width:100%;
+}
+
+  .deleteButton {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 24px;
-            margin-top: 10px;
+  #clearAllButton {
+  background-color: rgb(139, 28,139);
+  pisiton:relative;
+    color:white;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-            position: fixed;
-            top: 150px;
-            left: 10px;
-            background-color: rgb(223, 221, 221);
-            margin: 20px;
-            line-height: 10px;
+  #addButton {
+    color:white;
+  background-color: rgb(139, 28,139);
         }
-        li {
-            margin-bottom: 5px;
-        }
-        h3 {
-            position: fixed;
-            top: 10px;
-            left: 30px;
-        }
-        #block{
-            width:500px;
-            height:auto;
-        }
-        .deleteButton {
-            margin-left: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-        }
-        #todoCount {
-            position: fixed;
-            bottom: 100px;
-        }
-        #clearAllButton {
-            background-color: rgb(139, 28, 139);
-            position: fixed;
-            right: 55px;
-            bottom: 100px;
-        }
-        #addButton {
-            background-color: rgb(139, 28, 139);
-            position: absolute;
-            right: 330px;
-            top: 90px;
-        }
+
     </style>
 </head>
 <body>
-    <div id="block">
+  <div id="block">
     <h3>Todo App</h3>
-    <input type="text" id="todoInput" placeholder="Add your to-do">
+   <div ="add">
+    <input type="text" id="todoInput"  
+    placeholder="Add your to-do">
     <button id="addButton">+</button>
+   </div>
     <ul id="todoList"></ul>
     <div id="todoCount"></div>
-    <button id="clearAllButton">Clear All</button>
+    <div>
+      <button id="clearAllButton">Clear All</button>
+   </div>
     </div>
     <script>
         var todoInput = document.getElementById("todoInput");
