@@ -38,7 +38,10 @@
             top: 10px;
             left: 30px;
         }
-
+        #block{
+            width:500px;
+            height:auto;
+        }
         .deleteButton {
             margin-left: 10px;
             background-color: red;
@@ -66,13 +69,14 @@
     </style>
 </head>
 <body>
+    <div id="block">
     <h3>Todo App</h3>
     <input type="text" id="todoInput" placeholder="Add your to-do">
     <button id="addButton">+</button>
     <ul id="todoList"></ul>
     <div id="todoCount"></div>
     <button id="clearAllButton">Clear All</button>
-
+    </div>
     <script>
         var todoInput = document.getElementById("todoInput");
         var addButton = document.getElementById("addButton");
