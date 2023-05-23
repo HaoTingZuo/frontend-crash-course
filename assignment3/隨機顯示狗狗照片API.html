@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>按鈕觸發狗狗圖片API</title>
+  <script>
+  const dogUrl="https://dog.ceo/api/breeds/image/random"
+    function callPhotoAPI() {
+      fetch(dogUrl)
+        .then(response => response.json())
+        .then(data => {
+          const img = document.getElementById("dogImage")
+          img.src = data.message;
+        })
+        .catch(error => console.error(error));
+    }
+  </script>
+</head>
+<body>
+  <button onclick="callPhotoAPI()">呼叫照片API</button>
+  <br>
+  <img id="dogImage" src="" alt="狗狗圖片">
+</body>
+</html>

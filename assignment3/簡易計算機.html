@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter App</h1>
+    <button id="increaseBtn">+</button>
+    <span id="counterValue">0</span>
+    <button id="decreaseBtn">-</button>
+
+    <script>
+        var counter = 0; // 初始數值為零
+
+        // 取得按鈕元素
+        var increaseBtn = document.getElementById("increaseBtn");
+        var decreaseBtn = document.getElementById("decreaseBtn");
+
+        // 取得顯示數值的元素
+        var counterValue = document.getElementById("counterValue");
+
+        // 按下 "+" 按鈕時的處理函式
+        increaseBtn.addEventListener("click", function() {
+            counter++; // 數值增加1
+            counterValue.textContent = counter; // 更新顯示的數值
+        });
+
+        // 按下 "-" 按鈕時的處理函式
+        decreaseBtn.addEventListener("click", function() {
+            counter--; // 數值減少1
+            counterValue.textContent = counter; // 更新顯示的數值
+        });
+    </script>
+</body>
+</html>

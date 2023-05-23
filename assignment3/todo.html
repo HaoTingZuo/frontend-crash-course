@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 100px;
+        }
+        input[type="text"] {
+            position: fixed;
+            left: 30px;
+            padding: 10px;
+            font-size: 24px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            position: fixed;
+            top: 150px;
+            left: 10px;
+            background-color: rgb(223, 221, 221);
+            margin: 20px;
+            line-height: 10px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        h3 {
+            position: fixed;
+            top: 10px;
+            left: 30px;
+        }
+
+        .deleteButton {
+            margin-left: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        #todoCount {
+            position: fixed;
+            bottom: 100px;
+        }
+        #clearAllButton {
+            background-color: rgb(139, 28, 139);
+            position: fixed;
+            right: 55px;
+            bottom: 100px;
+        }
+        #addButton {
+            background-color: rgb(139, 28, 139);
+            position: absolute;
+            right: 330px;
+            top: 90px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Todo App</h3>
+    <input type="text" id="todoInput" placeholder="Add your to-do">
+    <button id="addButton">+</button>
+    <ul id="todoList"></ul>
+    <div id="todoCount"></div>
+    <button id="clearAllButton">Clear All</button>
+
+    <script>
+        var todoInput = document.getElementById("todoInput");
+        var addButton = document.getElementById("addButton");
+        var todoList = document.getElementById("todoList");
+        var todoCount = document.getElementById("todoCount");
+        var clearAllButton = document.getElementById("clearAllButton");
+
+        addButton.addEventListener("click", function() {
+            var todoText = todoInput.value.trim();
+
+            if (todoText !== "") {
+                var listItem = document.createElement("li");
+                listItem.textContent = todoText;
+
+                var deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "&#128465;"; // 垃圾桶圖示的HTML實體編碼
+
+                deleteButton.classList.add("deleteButton");
+
+                deleteButton.addEventListener("click", function() {
+                    listItem.remove();
+                    updateTodoCount();
+                });
+
+                listItem.appendChild(deleteButton);
+                todoList.appendChild(listItem);
+
+                todoInput.value = "";
+                updateTodoCount();
+            }
+        });
+
+        function updateTodoCount() {
+            var count = todoList.getElementsByTagName("li").length;
+            todoCount.textContent = "You have " + count + " pending tasks";
+        }
+
+        clearAllButton.addEventListener("click", function() {
+            todoList.innerHTML = ""; // 清空代辦事項列表
+            updateTodoCount();
+        });
+    </script>
+</body>
+</html
