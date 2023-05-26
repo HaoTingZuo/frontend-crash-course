@@ -1,0 +1,80 @@
+//Practices 4-1
+
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Hello, world!");
+    }, 1000);
+});
+
+myPromise.then((message) => {
+    console.log(message);
+});
+
+//Practices 4-2
+
+async function fetchData() {
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, 3000);
+    });
+
+    console.log("Delay complete!");
+}
+
+fetchData();
+
+
+//Practices 4-3
+
+async function fetchData() {
+    try {
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const condition = true;
+                if (condition) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            }, 3000);
+        });
+
+        console.log("Promise resolved!");
+    } catch (error) {
+        console.log("Promise rejected!");
+    }
+}
+
+fetchData();
+
+//Practices 4-4
+
+async function runPromises() {
+    const promiseA = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+  
+    const promiseB = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+    });
+  
+    const promiseC = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 3000);
+    });
+  
+    await promiseA;
+    await promiseB;
+    await promiseC;
+  
+    console.log("All promises resolved!");
+  }
+  
+  runPromises();
+
